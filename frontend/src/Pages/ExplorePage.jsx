@@ -14,7 +14,12 @@ const ExplorePage = () => {
     setRepos([]);
     try {
       const res = await fetch(
-        `https://api.github.com/search/repositories?q=language:${language}&sort=stars&order=desc&per_page=10`
+        `https://api.github.com/search/repositories?q=language:${language}&sort=stars&order=desc&per_page=10`,
+        {
+          headers: {
+            authorization: `token ${import.meta.env.GIT_API_KEY}`,
+          },
+        }
       );
       const { repos } = await res.json();
       setRepos(repos);

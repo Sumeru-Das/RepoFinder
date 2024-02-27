@@ -21,7 +21,7 @@ const HomePage = () => {
           `https://api.github.com/users/${username}`,
           {
             headers: {
-              authorization: `token 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`,
+              authorization: `token ${import.meta.env.GIT_API_KEY}`,
             },
           }
         );
@@ -57,6 +57,7 @@ const HomePage = () => {
     setUserProfile(userProfile);
     setRepos(repos);
     setLoading(false);
+    setSortType("recent");
   };
 
   const onSort = (sortType) => {
