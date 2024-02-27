@@ -1,4 +1,4 @@
-import { FaCodeBranch, FaCopy, FaRegStar, FaServer } from "react-icons/fa";
+import { FaCodeBranch, FaCopy, FaRegStar } from "react-icons/fa";
 import { FaCodeFork } from "react-icons/fa6";
 import { formatDate } from "../utils/Functions";
 import { PROGRAMMING_LANGUAGES } from "../utils/Constants";
@@ -17,7 +17,7 @@ const Repo = ({ repo }) => {
     }
   };
 
-  const [showError, setShowError] = useState(false);
+  const [setShowError] = useState(false);
 
   const handleClick = () => {
     if (!repo.homepage) {
